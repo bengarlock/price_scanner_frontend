@@ -1,0 +1,1 @@
+export const GET_FAVORITES = "GET_FAVORITES"
