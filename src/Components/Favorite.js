@@ -7,10 +7,12 @@ class Favorite extends React.Component {
         return(
             <div className="favorite-container">
                 <div className="fav-image">
-                    <img src={this.props.favorite.image} alt={this.props.favorite.name}/>
+                    <div className="image-wrapper">
+                        <img src={this.props.favorite.image} alt={this.props.favorite.name}/>
+                    </div>
                     <div>{this.props.favorite.name}</div>
+                    <div>{this.props.favorite.prices.slice(-1)[0].price}</div>
                 </div>
-
             </div>
         )
     }
