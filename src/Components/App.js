@@ -3,6 +3,7 @@ import React from 'react'
 import { getFavorites } from "../Actions/Favorites";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Favorite from "./Favorite";
 
 class App extends React.Component {
 
@@ -15,12 +16,13 @@ class App extends React.Component {
     }
 
     renderFavorites = () => {
-
+        return this.props.favorites.map(favorite => <Favorite key={favorite.id} favorite={favorite}/>)
     }
 
     render() {
         return(
-            <div>
+            <div className="favorites-container">
+                {this.renderFavorites()}
 
             </div>
     )

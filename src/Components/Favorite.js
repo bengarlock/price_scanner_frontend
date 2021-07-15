@@ -1,15 +1,20 @@
 import '../Stylesheets/Favorite.css';
 import React from 'react'
 
-class App extends React.Component {
+class Favorite extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="favorite-container">
+                <div className="fav-image">
+                    <img src={this.props.favorite.image} alt={this.props.favorite.name}/>
+                    <div>{this.props.favorite.name}</div>
+                </div>
 
             </div>
         )
     }
 }
 
-export default App;
+export default Favorite
+

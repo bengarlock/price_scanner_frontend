@@ -1,0 +1,12 @@
+
+.favorite-container {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+.fav-image img{
+    width: 6em;
+}

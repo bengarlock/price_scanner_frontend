@@ -13,7 +13,14 @@ export const getFavorites = () => {
             return date.getMonth() + 1 + '/' + date.getDate() + "/" + date.getFullYear()
         }
 
+        const getWords = (str) => {
+            return str.split(/\s+/).slice(0,5).join(" ");
+        }
+
         favorites.forEach(favorite => favorite.created_at = formatDate(favorite.created_at))
+        favorites.forEach(favorite => favorite.name = getWords(favorite.name))
+
+
         dispatch({
             type: GET_FAVORITES,
             payload: favorites
