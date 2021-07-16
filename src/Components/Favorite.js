@@ -1,6 +1,6 @@
 import '../Stylesheets/Favorite.css';
 import React from 'react'
-import { setFavorites, renderOverlay } from "../Actions/Favorites";
+import { setFavorite, renderOverlay } from "../Actions/Favorites";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -12,7 +12,7 @@ class Favorite extends React.Component {
 
     onClickHandler = () => {
         this.props.renderOverlay(true)
-        this.props.setFavorites(this.props.favorite)
+        this.props.setFavorite(this.props.favorite)
     }
 
 
@@ -36,5 +36,5 @@ const mapStateToProps = (state) => ({
     selected_favorite: state.favorites.selected_favorite,
 })
 
-export default connect(mapStateToProps, { setFavorites, renderOverlay })(Favorite);
+export default connect(mapStateToProps, { setFavorite, renderOverlay })(Favorite);
 

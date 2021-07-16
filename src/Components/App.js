@@ -28,6 +28,7 @@ class App extends React.Component {
 
     renderFavorites = () => {
         return this.props.favorites.map(favorite => <Favorite key={favorite.id} favorite={favorite}/>)
+        console.log(this.props.favorites)
     }
 
     render() {
