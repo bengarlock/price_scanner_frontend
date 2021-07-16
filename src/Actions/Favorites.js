@@ -1,5 +1,7 @@
 import { GET_FAVORITES } from "./Types";
 import { SET_FAVORITE } from "./Types";
+import { RENDER_FORM } from "./Types"
+import { RENDER_OVERLAY } from "./Types"
 
 //GET FAVORITES
 export const getFavorites = () => {
@@ -28,6 +30,28 @@ export const getFavorites = () => {
     };
 }
 
+
+//RENDER_OVERLAY
+export const renderOverlay = (status) => {
+    return (dispatch) => {
+        dispatch({
+            type: RENDER_OVERLAY,
+            payload: status,
+        })
+    }
+}
+
+//RENDER_FORM
+export const renderForm = (status) => {
+    return (dispatch) => {
+        dispatch({
+            type: RENDER_FORM,
+            payload: status,
+        })
+    }
+}
+
+
 //SET_FAVORITE
 export const setFavorites = (favorite) => {
     return (dispatch) => {
@@ -37,3 +61,4 @@ export const setFavorites = (favorite) => {
         })
     }
 }
+

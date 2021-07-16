@@ -19,6 +19,10 @@
     transition: .5s;
 }
 
+#add-favorite-button {
+
+}
+
 .image-wrapper {
     position: relative;
     border-radius: 50%;
