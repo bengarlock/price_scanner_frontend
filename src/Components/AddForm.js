@@ -6,17 +6,20 @@ import PropTypes from 'prop-types';
 class AddForm extends React.Component {
 
     static propTypes = {
+        favorites: PropTypes.array.isRequired,
         form: PropTypes.object.isRequired,
     }
 
-    onChangeHandler = (e) => {
+    onChangeHandler = async (e) => {
         e.preventDefault()
         if (e.target.name === "url") {
             this.props.changeForm({
                 url: e.target.value,
             })
         } else if(e.target.nodeName === "FORM") {
-            this.props.addFavorite(this.props.form)
+            const response = this.props.addFavorite(this.props.form)
+            response.then(res => console.log(res))
+            let favorites = [...this.props.favorites]
         }
     }
     render() {
@@ -32,6 +35,7 @@ class AddForm extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
+    favorites: state.favorites.favorites,
     form: state.favorites.form
 })
 

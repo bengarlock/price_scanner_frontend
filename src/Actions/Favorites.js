@@ -1,5 +1,6 @@
 import { GET_FAVORITES } from "./Types";
 import { SET_FAVORITE } from "./Types";
+import { SET_FAVORITES } from "./Types";
 import { RENDER_FORM } from "./Types"
 import { RENDER_OVERLAY } from "./Types"
 import { CHANGE_FORM } from "./Types"
@@ -54,7 +55,7 @@ export const renderForm = (status) => {
 }
 
 //SET_FAVORITE
-export const setFavorites = (favorite) => {
+export const setFavorite = (favorite) => {
     return (dispatch) => {
         dispatch({
             type: SET_FAVORITE,
@@ -76,7 +77,6 @@ export const changeForm = (form) => {
 //ADD_FAVORITE
 export const addFavorite = (form) => {
     return async (dispatch) => {
-
         const packet = {
             method: "POST",
             headers: {
@@ -85,17 +85,22 @@ export const addFavorite = (form) => {
             },
             body: JSON.stringify({url: form.url})
         }
-
         const response = await fetch("https://bengarlock.com/api/v1/price_scanner/favorites/", packet)
-        let favorite = await response.json()
-
-        console.log(favorite)
+        const favorite = await response.json()
 
         dispatch({
             type: ADD_FAVORITE,
             payload: favorite
         })
-
     }
+}
 
+//SET_FAVORITES
+export const setFavorites = (favorites) => {
+    return(dispatch) => {
+        dispatch({
+            type: SET_FAVORITES,
+            payload: favorites
+        })
+    }
 }

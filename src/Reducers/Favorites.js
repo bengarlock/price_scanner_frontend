@@ -1,6 +1,6 @@
 //reducers evaluate actions and return state based off that action.
 
-import {CHANGE_FORM, GET_FAVORITES, RENDER_FORM, RENDER_OVERLAY, SET_FAVORITE} from "../Actions/Types";
+import {CHANGE_FORM, GET_FAVORITES, RENDER_FORM, RENDER_OVERLAY, SET_FAVORITE, SET_FAVORITES} from "../Actions/Types";
 
 const initialState = {
     favorites: [],
@@ -40,6 +40,12 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 form: action.payload
+            }
+
+        case SET_FAVORITES:
+            return {
+                ...state,
+                favorites: action.payload
             }
 
         default:
