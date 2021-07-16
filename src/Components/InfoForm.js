@@ -31,6 +31,13 @@ class InfoForm extends React.Component {
                     {this.renderPrices()}
                 </div>
 
+                <a href={this.props.selected_favorite.url} target="_blank">
+                    <div className="url-button">
+                        Link
+                    </div>
+                </a>
+
+
             </div>
         )
     }

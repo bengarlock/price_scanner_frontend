@@ -58,3 +58,17 @@
     position: relative;
     width: 200px;
 }
+
+.url-button {
+    background-color: #1d1d32;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%);
+    margin-top: 2em;
+    width: 300px;
+    padding: 1em;
+}
+.url-button:hover {
+    background-color: #263d84;
+    transition: .5s;
+}
