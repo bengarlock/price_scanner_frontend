@@ -37,7 +37,6 @@ class App extends React.Component {
                 <div className="favorite-container" id="add-favorite-button" onClick={this.onClickHandler}>+</div>
 
                 {this.props.selected_favorite.name ? <InfoForm /> : null}
-
                 {this.props.render_overlay ? <Overlay /> : null}
                 {this.props.render_form ? <AddForm /> : null}
 

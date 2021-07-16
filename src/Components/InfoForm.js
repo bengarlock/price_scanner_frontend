@@ -16,7 +16,7 @@ class InfoForm extends React.Component {
         }
         let prices = this.props.selected_favorite.prices.map(i => i.price)
         let unique = prices.filter(onlyUnique)
-        return unique.map(price => <span>{price} <br /></span>)
+        return unique.map(price => <span key={prices.indexOf[price]}>{price} <br /></span>)
 
     }
 
