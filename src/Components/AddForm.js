@@ -18,7 +18,6 @@ class AddForm extends React.Component {
             })
         } else if(e.target.nodeName === "FORM") {
             const response = this.props.addFavorite(this.props.form)
-            response.then(res => console.log(res))
             let favorites = [...this.props.favorites]
         }
     }
