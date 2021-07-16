@@ -1,5 +1,6 @@
 {
   "name": "price_scanner_frontend",
+  "homepage": "/pricescanner",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
