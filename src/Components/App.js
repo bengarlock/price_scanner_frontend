@@ -22,13 +22,12 @@ class App extends React.Component {
     }
 
     onClickHandler = () => {
-        this.props.renderOverlay(true)
+        this.props.renderOverlay(!this.props.render_overlay)
         this.props.renderForm(!this.props.render_form)
     }
 
     renderFavorites = () => {
         return this.props.favorites.map(favorite => <Favorite key={favorite.id} favorite={favorite}/>)
-        console.log(this.props.favorites)
     }
 
     render() {
@@ -37,7 +36,7 @@ class App extends React.Component {
                 <div className="favorite-container" id="add-favorite-button" onClick={this.onClickHandler}>+</div>
                 {this.renderFavorites()}
 
-                {this.props.selected_favorite.name ? <InfoForm /> : null}
+                {this.props.selected_favorite.url ? <InfoForm /> : null}
                 {this.props.render_overlay ? <Overlay /> : null}
                 {this.props.render_form ? <AddForm /> : null}
 

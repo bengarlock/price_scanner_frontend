@@ -83,7 +83,10 @@ export const addFavorite = (form) => {
                 "content-type": "application/json",
                 "accept": "application/json",
             },
-            body: JSON.stringify({url: form.url})
+            body: JSON.stringify({
+                url: form.url,
+                image: "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png"
+            })
         }
         const response = await fetch("https://bengarlock.com/api/v1/price_scanner/favorites/", packet)
         const favorite = await response.json()
