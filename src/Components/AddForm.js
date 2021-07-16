@@ -25,7 +25,11 @@ class AddForm extends React.Component {
         return(
             <div className='info-form-container'>
                 <form onSubmit={this.onChangeHandler}>
-                    <input type="text" name="url" placeholder="URL" onChange={this.onChangeHandler} value={this.props.form.url}/>
+                    <input type="text"
+                           name="url"
+                           placeholder="URL"
+                           onChange={this.onChangeHandler}
+                           value={this.props.form.url}/>
                     <input type="submit" name="submit" />
                 </form>
             </div>
