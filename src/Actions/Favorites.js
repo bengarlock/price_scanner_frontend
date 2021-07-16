@@ -2,6 +2,7 @@ import { GET_FAVORITES } from "./Types";
 import { SET_FAVORITE } from "./Types";
 import { RENDER_FORM } from "./Types"
 import { RENDER_OVERLAY } from "./Types"
+import { CHANGE_FORM } from "./Types"
 
 //GET FAVORITES
 export const getFavorites = () => {
@@ -51,7 +52,6 @@ export const renderForm = (status) => {
     }
 }
 
-
 //SET_FAVORITE
 export const setFavorites = (favorite) => {
     return (dispatch) => {
@@ -62,3 +62,12 @@ export const setFavorites = (favorite) => {
     }
 }
 
+//CHANGE_FORM
+export const changeForm = (form) => {
+    return(dispatch) => {
+        dispatch({
+            type: CHANGE_FORM,
+            payload: form
+        })
+    }
+}

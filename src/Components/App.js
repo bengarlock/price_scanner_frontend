@@ -33,8 +33,8 @@ class App extends React.Component {
     render() {
         return(
             <div className="favorites-container">
-                {this.renderFavorites()}
                 <div className="favorite-container" id="add-favorite-button" onClick={this.onClickHandler}>+</div>
+                {this.renderFavorites()}
 
                 {this.props.selected_favorite.name ? <InfoForm /> : null}
                 {this.props.render_overlay ? <Overlay /> : null}
