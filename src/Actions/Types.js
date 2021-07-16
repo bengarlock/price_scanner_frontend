@@ -1,1 +1,2 @@
 export const GET_FAVORITES = "GET_FAVORITES"
+export const SET_FAVORITE = "SET_FAVORITE"

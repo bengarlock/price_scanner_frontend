@@ -1,5 +1,5 @@
 import { GET_FAVORITES } from "./Types";
-
+import { SET_FAVORITE } from "./Types";
 
 //GET FAVORITES
 export const getFavorites = () => {
@@ -26,4 +26,14 @@ export const getFavorites = () => {
             payload: favorites
         })
     };
+}
+
+//SET_FAVORITE
+export const setFavorites = (favorite) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_FAVORITE,
+            payload: favorite,
+        })
+    }
 }
