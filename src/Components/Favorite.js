@@ -18,13 +18,13 @@ class Favorite extends React.Component {
 
     render() {
         return(
-            <div className="favorite-container" onClick={this.onClickHandler}>
+            <div className="favorite-container" id={this.props.favorite.id} onClick={this.onClickHandler}>
                 <div className="fav-image">
                     <div className="image-wrapper">
                         <img src={this.props.favorite.image} alt={this.props.favorite.name}/>
                     </div>
                     <div>{this.props.favorite.name}</div>
-                    <div>{this.props.favorite.prices.slice(-1)[0].price}</div>
+                    <div>{this.props.favorite.prices[0] ? this.props.favorite.prices.slice(-1)[0].price : null}</div>
                 </div>
             </div>
         )

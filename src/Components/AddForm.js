@@ -1,5 +1,5 @@
 import React from 'react'
-import {changeForm, setFavorites} from "../Actions/Favorites";
+import {changeForm, addFavorite} from "../Actions/Favorites";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -16,7 +16,7 @@ class AddForm extends React.Component {
                 url: e.target.value,
             })
         } else if(e.target.nodeName === "FORM") {
-            console.log(this.props.form)
+            this.props.addFavorite(this.props.form)
         }
     }
     render() {
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => ({
     form: state.favorites.form
 })
 
-export default connect(mapStateToProps, { changeForm })(AddForm);
+export default connect(mapStateToProps, { changeForm, addFavorite })(AddForm);
