@@ -4,11 +4,14 @@ import { getFavorites } from "../Actions/Favorites";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Favorite from "./Favorite";
+import Overlay from "./Overlay";
+import InfoForm from "./InfoForm";
 
 class App extends React.Component {
 
     static propTypes = {
         favorites: PropTypes.array.isRequired,
+        selected_favorite: PropTypes.object.isRequired,
     }
 
     componentDidMount = () => {
@@ -23,6 +26,8 @@ class App extends React.Component {
         return(
             <div className="favorites-container">
                 {this.renderFavorites()}
+                {this.props.selected_favorite.name ? <Overlay /> : null}
+                {this.props.selected_favorite.name ? <InfoForm /> : null}
 
             </div>
     )
@@ -30,8 +35,8 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    //state.resyRestaurants calls the reducer and .resyRestaurants calls the action
     favorites: state.favorites.favorites,
+    selected_favorite: state.favorites.selected_favorite
 })
 
 export default connect(mapStateToProps, { getFavorites })(App);
