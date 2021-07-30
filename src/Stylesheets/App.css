@@ -22,4 +22,13 @@ a:visited {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  transition: 1s;
+}
+#add-favorite-button {
+  background-color: #2c1250
+}
+
+#add-favorite-button:hover {
+  background-color: red;
+  transition: .5s;
 }
